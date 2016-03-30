@@ -1,0 +1,6 @@
+{
+  "name": "Kvmpptpd",
+  "tagline": "Autoinstall PPTPD on KVM VPS",
+  "body": "# A PPTP VPN setup script for a Debian/Ubuntu VPS (KVM)\r\n\r\n## To install the script, copy and paste this into your SSH client of choice:\r\n\r\n`wget https://github.com/aalsmile/kvmpptpd/raw/master/kvmpptpd && chmod +x kvmpptpd && ./kvmpptpd`\r\n\r\n> Special for BoutNew.ru",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
