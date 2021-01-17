@@ -1,7 +1,7 @@
 #!/bin/bash
 # Interactive PoPToP install script for an KVM VPS
 # Tested on Debian 7, and Ubuntu 12.04-15.04
-# Feb 14, 2016 v1.
+# Feb 18, 2021 v2.
 
 echo "######################################################"
 echo "Interactive PoPToP Install Script for an KVM VPS"
@@ -78,7 +78,7 @@ echo
 echo "######################################################"
 echo "Updating IPtables Routing and Enabling it on boot"
 echo "######################################################"
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o ens3 -j MASQUERADE
 # saves iptables routing rules and enables them on-boot
 iptables-save > /etc/iptables.conf
 
@@ -114,7 +114,7 @@ elif test $x -eq 2; then
 	read p
 
 # get the VPS IP
-ip=`ifconfig eth0 | grep 'inet addr' | awk {'print $2'} | sed s/.*://`
+ip=`ifconfig ens3 | grep 'inet addr' | awk {'print $2'} | sed s/.*://`
 
 # adding new user
 echo "$u	*	$p	*" >> /etc/ppp/chap-secrets
