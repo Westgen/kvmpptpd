@@ -28,7 +28,7 @@ if test $x -eq 1; then
 	read p
 
 # get the VPS IP
-ip=`ifconfig eth0 | grep 'inet addr' | awk {'print $2'} | sed s/.*://`
+ip=`ifconfig ens3 | grep 'inet addr' | awk {'print $2'} | sed s/.*://`
 
 echo
 echo "######################################################"
